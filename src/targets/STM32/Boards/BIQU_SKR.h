@@ -344,4 +344,96 @@ constexpr BoardDefaults btt_rrf_e3_1_0_Defaults = {
 #endif
     0							// digiPot Factor
 };
+
+// BIQU SKR version 2.0
+constexpr PinEntry PinTable_BIQU_SKR_v2_0[] =
+{
+    //Thermistors    
+    {PA_1, PinCapability::ainrw, "bedtemp,tb"},
+    {PA_2, PinCapability::ainrw, "e0temp,th0"},
+    {PA_3, PinCapability::ainrw, "e1temp,th1"},
+
+    //Endstops
+    {PC_1, PinCapability::rwpwm, "xstop,x-stop"},
+    {PC_3, PinCapability::rwpwm, "ystop,y-stop"},
+    {PC_0, PinCapability::rwpwm, "zstop,z-stop"},
+    {PC_2, PinCapability::rwpwm, "e0stop,e0det"},
+    {PA_0, PinCapability::rwpwm, "e1stop,e1det"},
+	{PC_15, PinCapability::rwpwm, "pwrdet,PC15"},
+	{PE_4, PinCapability::rwpwm, "probe"},
+
+    //Heaters and Fans (Big and Small Mosfets}
+    {PD_7, PinCapability::wpwm, "bed,hbed" },
+    {PB_3, PinCapability::wpwm, "e0heat,heat0" },
+    {PB_4, PinCapability::wpwm, "e1heat,he1" },
+    {PB_7, PinCapability::wpwm, "fan0,fan" },
+    {PB_6, PinCapability::wpwm, "fan1" },
+    {PB_5, PinCapability::wpwm, "fan2" },
+
+    //Servos
+    {PE_5, PinCapability::rwpwm, "servo0" },
+	
+	//Neopixel
+	{PE_6, PinCapability::rwpwm, "Neopixel,PE6"},
+
+    //EXP1
+    {PE_13, PinCapability::rwpwm, "PE13"},
+    {PE_12, PinCapability::rwpwm, "PE12"},
+    {PE_11, PinCapability::rwpwm, "PE11"},
+    {PE_10, PinCapability::rwpwm, "PE10"},
+    {PB_9, PinCapability::rwpwm, "PB9"},
+    {PB_1, PinCapability::rwpwm, "PB1"},
+    {PB_0, PinCapability::rwpwm, "PB0"},
+    {PC_5, PinCapability::rwpwm, "PC5"},
+
+    //EXP2
+    {PC_4, PinCapability::rwpwm, "PC4"},
+    {PA_7, PinCapability::rwpwm, "PA7"}, //SSP0 MOSI
+    {PB_2, PinCapability::rwpwm, "PB2"},
+    {PA_4, PinCapability::rwpwm, "PA4"},
+    {PE_7, PinCapability::rwpwm, "PE7"},
+    {PA_5, PinCapability::rwpwm, "PA5"}, //SSP0 SCK
+    {PA_6, PinCapability::rwpwm, "PA6"}, //SSP0 MISO
+
+	//TFT
+    {PA_9, PinCapability::rwpwm, "TX1,tft-tx"},
+    {PA_10, PinCapability::rwpwm, "RX1,tft-rx"},
+
+    //WIFI UART
+    {PD_8, PinCapability::rwpwm, "PD8"},
+    {PD_9, PinCapability::rwpwm, "PD9"},
+    
+    //UART
+    {PB_8, PinCapability::rwpwm, "SDA1,PB8"},
+    {PB_9, PinCapability::rwpwm, "SCL1,PB9"},   
+
+    //WIFI
+    {PE_14, PinCapability::rwpwm, "PE_14"}, //RST
+    {PE_15, PinCapability::rwpwm, "PE_15"}, //EN
+    {PB_10, PinCapability::rwpwm, "PB_10"}, //IO0
+    {PB_11, PinCapability::rwpwm, "PB_11"}, //IO4
+    {PB_12, PinCapability::rwpwm, "PB_12"}, //CS
+    {PB_13, PinCapability::rwpwm, "PB_13"}, //CLK
+    {PB_14, PinCapability::rwpwm, "PB_14"}, //MISO
+    {PB_15, PinCapability::rwpwm, "PB_15"}, //MOSI
+    
+    //PSON
+    {PE_8, PinCapability::rwpwm, "PSON,PE8"},
+    
+    //Status LED
+    {PA_13, PinCapability::rwpwm, "LED,PA13"},
+    
+};
+
+constexpr BoardDefaults biquskr_2_0_Defaults = {
+    5,                          // Number of drivers
+    {PE_3, PD_6, PD_1, PC_7, PD_13}, // enablePins
+    {PE_2, PD_5, PA_15, PD_15, PD_11},  // stepPins
+    {PE_1, PD_4, PA_8, PD_14, PD_10}, // dirPins
+#if TMC_SOFT_UART
+    {PE_0, PD_3, PD_0, PC_6, PD_12}, // uartpins
+    5,                          // Smart drivers
+#endif
+    0                           // digiPot Factor
+};
 #endif
