@@ -381,7 +381,7 @@ constexpr PinEntry PinTable_BIQU_SKR_v2_0[] =
     {PE_12, PinCapability::rwpwm, "PE12"},
     {PE_11, PinCapability::rwpwm, "PE11"},
     {PE_10, PinCapability::rwpwm, "PE10"},
-    {PB_9, PinCapability::rwpwm, "PB9"},
+    {PE_9, PinCapability::rwpwm, "PE9"},
     {PB_1, PinCapability::rwpwm, "PB1"},
     {PB_0, PinCapability::rwpwm, "PB0"},
     {PC_5, PinCapability::rwpwm, "PC5"},
@@ -404,12 +404,12 @@ constexpr PinEntry PinTable_BIQU_SKR_v2_0[] =
     {PD_9, PinCapability::rwpwm, "PD9"},
     
     //UART
-    {PB_8, PinCapability::rwpwm, "SDA1,PB8"},
-    {PB_9, PinCapability::rwpwm, "SCL1,PB9"},   
+    {PB_9, PinCapability::rwpwm, "SDA1,PB9"},
+    {PB_8, PinCapability::rwpwm, "SCL1,PB8"},   
 
     //WIFI
-    {PE_14, PinCapability::rwpwm, "PE_14"}, //RST
-    {PE_15, PinCapability::rwpwm, "PE_15"}, //EN
+    {PC_14, PinCapability::rwpwm, "PC_14"}, //RST
+    //{PE_15, PinCapability::rwpwm, "PE_15"}, //EN
     {PB_10, PinCapability::rwpwm, "PB_10"}, //IO0
     {PB_11, PinCapability::rwpwm, "PB_11"}, //IO4
     {PB_12, PinCapability::rwpwm, "PB_12"}, //CS
